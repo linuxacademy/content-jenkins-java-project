@@ -15,14 +15,12 @@
   <!-- Deletes the existing build, docs and dist directory-->
   <target name="clean">
     <delete dir="${build.dir}" />
-    <delete dir="${docs.dir}" />
     <delete dir="${dist.dir}" />
   </target>
 
   <!-- Creates the  build, docs and dist directory-->
   <target name="makedir">
     <mkdir dir="${build.dir}" />
-    <mkdir dir="${docs.dir}" />
     <mkdir dir="${dist.dir}" />
   </target>
 
