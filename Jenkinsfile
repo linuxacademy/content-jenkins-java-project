@@ -12,7 +12,19 @@ pipeline {
       steps {
         sayHello 'Awesome Student!'
       }
+    }
+    stage('Printing Git Info') {
+      agent any
 
+      steps {
+        script {
+          def myLib = new linuxacademy.git.gitStuff();
+
+          echo myLib.gitInfo('branch')
+
+          echo myLib.gitInfo('commit')
+        }
+      }
     }
     stage('Unit Tests') {
       agent {
