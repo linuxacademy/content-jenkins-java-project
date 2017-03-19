@@ -20,9 +20,11 @@ pipeline {
         script {
           def myLib = new linuxacademy.git.gitStuff();
 
-          echo myLib.gitInfo('branch')
+          echo "${env.WORKSPACE}/.git"
+          
+          echo myLib.gitInfo("${env.WORKSPACE}/.git", 'branch')
 
-          echo myLib.gitInfo('commit')
+          echo myLib.gitInfo("${env.WORKSPACE}/.git", 'commit')
         }
       }
     }
