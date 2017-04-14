@@ -8,5 +8,10 @@ pipeline{
        sh 'ant -f build.xml'
       }
     }
+  post{
+    always{
+      archive 'dist/*.jar'
+    }
+  }
   }
 }
