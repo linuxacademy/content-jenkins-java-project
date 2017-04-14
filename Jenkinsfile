@@ -3,10 +3,10 @@ pipeline{
 
   stages {
     stage('build'){
-      sh 'ant -f build.xml'
+      steps{
 
+       sh 'ant -f build.xml'
+      }
     }
   }
-
-
 }
