@@ -13,21 +13,6 @@ pipeline {
         sayHello 'Awesome Student!'
       }
     }
-    stage('Printing Git Info') {
-      agent any
-
-      steps {
-        script {
-          def myLib = new linuxacademy.git.gitStuff();
-
-          echo "${env.WORKSPACE}/.git"
-          
-          echo myLib.gitInfo("${env.WORKSPACE}/.git", 'branch')
-
-          echo myLib.gitInfo("${env.WORKSPACE}/.git", 'commit')
-        }
-      }
-    }
     stage('Git Information') {
       agent any
 
