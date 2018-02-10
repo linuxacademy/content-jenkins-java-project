@@ -1,8 +1,10 @@
 pipeline{
-    agent any
+    agent none
 
     environment{
+
       ENV_VAR='some_value'
+      
     }
 
     stages{
@@ -25,9 +27,7 @@ pipeline{
        }
 
 
-      stage('test'){
-          agent none
-          steps{echo 'testing...'}
+
 
 
       stage('deploy'){
