@@ -21,7 +21,7 @@ pipeline {
       archiveArtifacts artifacts: 'dist/*.jar', fingerprint: true
     }
 
-    steps{
+    success{
       junit 'reports/result.xml'
     }
   }
