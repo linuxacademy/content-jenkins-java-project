@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent centos
 
   stages {
     stage('Unit Tests') {
