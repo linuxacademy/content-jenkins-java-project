@@ -1,5 +1,7 @@
 pipeline {
-  agent centos
+  agent {
+      label 'centos'
+    }
 
   stages {
     stage('Unit Tests') {
