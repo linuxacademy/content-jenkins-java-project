@@ -4,7 +4,7 @@ pipeline{
     environment{
 
       ENV_VAR='some_value'
-      
+
     }
 
     stages{
@@ -35,6 +35,16 @@ pipeline{
             echo  'deploying...'
          }
       }
+    }
+
+
+    post{
+
+      always{
+
+         archive 'dist/*.jar'
+      }
+
     }
 
 }
