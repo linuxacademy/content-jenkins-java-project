@@ -4,8 +4,9 @@ pipeline {
   stages {
     stage('Unit Tests') {
       steps {
-        sh 'ant -f test.xml -v'
-        junit 'reports/result.xml'
+
+          sh 'ant -f text.xml -v'
+
       }
     }
     stage('build') {
@@ -18,6 +19,10 @@ pipeline {
   post {
     always {
       archiveArtifacts artifacts: 'dist/*.jar', fingerprint: true
+    }
+
+    steps{
+      junit 'reports/result.xml'
     }
   }
 }
