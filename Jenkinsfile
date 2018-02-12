@@ -58,24 +58,26 @@ pipeline {
           sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 54 321"
       }
 
-    stage('functional check on centos'){
-
-        agent{
-          label 'centos'
-        }
-
-        steps{
-            sh "wget http://srinuamar91.mylabserver.com/rectangles/all/rectangle_${env.BUILD_NUMBER}.jar"
-            sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 54 321"
-        }
-
-
-
 
     }
 
 
+
+    stage('functional check on centos'){
+
+            agent{
+              label 'centos'
+            }
+
+            steps{
+                sh "wget http://srinuamar91.mylabserver.com/rectangles/all/rectangle_${env.BUILD_NUMBER}.jar"
+                sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 54 321"
+            }
+        }
+
+
   }
+
 
 
 }
