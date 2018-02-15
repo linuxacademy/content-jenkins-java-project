@@ -11,16 +11,12 @@ pipeline {
       }
 
       steps {
-<<<<<<< HEAD
 
-          sh 'ant -f test.xml -v'
-          
-
-=======
+       
         sh 'ant -f test.xml -v'
         //
         junit 'reports/result.xml'
->>>>>>> Amar03
+
       }
     }
     stage('build') {
@@ -58,11 +54,6 @@ pipeline {
 
     }
 
-<<<<<<< HEAD
-    success{
-      junit 'reports/result.xml'
-    }
-=======
 
     stage('functional check on debian'){
 
@@ -93,6 +84,7 @@ pipeline {
           }
     }
 
+ //  Added this stage for automatic branch promotions ...
 
     stage('Promote Amar03 to Amar02'){
 
@@ -121,7 +113,6 @@ pipeline {
     }
 
 
->>>>>>> Amar03
   }
 
 
