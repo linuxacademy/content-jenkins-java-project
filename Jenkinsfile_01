@@ -1,0 +1,50 @@
+pipeline{
+    agent none
+
+    environment{
+
+      ENV_VAR='some_value'
+
+    }
+
+    stages{
+      stage('build'){
+          agent{
+          label 'centos'
+          }
+          steps{
+            echo 'building..'
+          }
+       stage('test'){
+          agent docker
+          agent{
+            docker 'openjdk:8u121-jre'
+          }
+
+           steps{
+            echo 'testing...'
+           }
+       }
+
+
+
+
+
+      stage('deploy'){
+         steps{
+            echo  'deploying...'
+         }
+      }
+    }
+
+
+    post{
+
+      always{
+
+         archive 'dist/*.jar'
+      }
+
+    }
+
+}

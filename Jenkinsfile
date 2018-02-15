@@ -2,11 +2,13 @@ pipeline {
 
   agent none
 
+
   environment{
 
     MAJOR_VERSION=1
 
   }
+
 
   stages {
     stage('Unit Tests') {
@@ -16,9 +18,12 @@ pipeline {
       }
 
       steps {
+
+
         sh 'ant -f test.xml -v'
         //
         junit 'reports/result.xml'
+
       }
     }
     stage('build') {
