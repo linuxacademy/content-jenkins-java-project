@@ -16,8 +16,9 @@ pipeline {
     stage('build') {
 
       agent{
-        label 'apache'
         
+        label 'apache'
+
       }
 
       steps {
