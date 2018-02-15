@@ -116,7 +116,7 @@ pipeline {
             sh "git merge Amar03"
             echo "Pushing to Origin Amar02"
             sh  'git push origin Amar02'
-            echo 'NO PROBLEMS 13'
+            echo 'NO PROBLEMS 16'
             sh 'git tag -a ${env.MAJOR_VERSION}.${env.BUILD_NUMBER}  -m ${env.GIT_COMMIT}'
             sh 'git push origin ${env.MAJOR_VERSION}.${env.BUILD_NUMBER}'
           }
