@@ -2,6 +2,12 @@ pipeline {
 
   agent none
 
+  environment{
+
+    MAJOR_VERSION=1
+
+  }
+
   stages {
     stage('Unit Tests') {
 
@@ -106,7 +112,8 @@ pipeline {
             echo "Pushing to Origin Amar02"
             sh  'git push origin Amar02'
             echo 'NO PROBLEMS 13'
-
+            sh 'git tag -a ${env.MAJOR_VERSION}.${env.BUILD_NUMBER}  -m ${env.GIT_COMMIT}'
+            sh 'git push origin ${env.MAJOR_VERSION}.${env.BUILD_NUMBER}'
           }
 
     }
