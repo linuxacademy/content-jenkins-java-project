@@ -149,14 +149,9 @@ pipeline {
 
     always{
 
-      emailext(
-
-        subject:"ENTER THE PROJECT ${env.JOB_NAME} BUILD  ${env.BUILD_NUMBER}"
-        body: "FIND THE LOG HERE ${env.BUILD_URL}"
-        to:"srinuamar9@gmail.com"
-
-
-      )
+      emailext(subject:"ENTER THE PROJECT ${env.JOB_NAME} BUILD  ${env.BUILD_NUMBER}",
+        body: "FIND THE LOG HERE ${env.BUILD_URL}",
+        to:"srinuamar9@gmail.com")
 
     }
 
