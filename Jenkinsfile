@@ -57,7 +57,7 @@ pipeline {
 
       steps{
          sh "mkdir -p /var/www/html/rectangles/all/${env.BRANCH_NAME}"
-         sh "cp dist/rectangle_${env.BUILD_NUMBER}.jar  /var/www/html/rectangles/all/${env.BRANCH_NAME}"
+         sh "cp dist/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar  /var/www/html/rectangles/all/${env.BRANCH_NAME}"
       }
 
     }
@@ -70,8 +70,8 @@ pipeline {
             }
 
             steps{
-                sh "wget http://35.230.114.105/rectangles/all/${env.BRANCH_NAME}/rectangle_${env.BUILD_NUMBER}.jar"
-                sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 54 321"
+                sh "wget http://35.230.114.105/rectangles/all/${env.BRANCH_NAME}/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar"
+                sh "java -jar rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar 54 321"
             }
         }
 
@@ -87,7 +87,7 @@ pipeline {
 
           steps{
 
-              sh "cp /var/www/html/rectangles/all/${env.BRANCH_NAME}/rectangle_${env.BUILD_NUMBER}.jar /var/www/html/rectangles/green"
+              sh "cp /var/www/html/rectangles/all/${env.BRANCH_NAME}/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar /var/www/html/rectangles/green"
 
           }
     }
@@ -116,7 +116,7 @@ pipeline {
             sh "git merge Amar03"
             echo "Pushing to Origin Amar02"
             sh  'git push origin Amar02'
-            echo 'NO PROBLEMS 17'
+            echo 'NO PROBLEMS 18'
             sh "git tag -a ${env.MAJOR_VERSION}.${env.BUILD_NUMBER}  -m ${env.GIT_COMMIT}"
             sh "git push origin ${env.MAJOR_VERSION}.${env.BUILD_NUMBER}"
           }
