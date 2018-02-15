@@ -45,8 +45,6 @@ pipeline {
     }
 
 
-
-
     stage('functional check on debian'){
 
             agent{
