@@ -1,6 +1,6 @@
 pipeline{
   agent {
-    label 'centos'
+    label 'apache'
   }
 
   options{
