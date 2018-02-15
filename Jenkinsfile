@@ -5,6 +5,7 @@ pipeline {
     MAJOR_VERSION = 1
   }
 
+
   stages {
     stage('Say Hello') {
       agent any
@@ -31,8 +32,10 @@ pipeline {
         label 'apache'
       }
       steps {
-        sh 'ant -f test.xml -v'
-        junit 'reports/result.xml'
+
+          sh 'ant -f test.xml -v'
+          
+
       }
     }
     stage('build') {
@@ -129,6 +132,10 @@ pipeline {
         <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
         to: "brandon@linuxacademy.com"
       )
+    }
+
+    success{
+      junit 'reports/result.xml'
     }
   }
 }
