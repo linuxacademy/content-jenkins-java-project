@@ -80,6 +80,7 @@ pipeline {
           }
     }
 
+ //  Added this stage for automatic branch promotions ...
 
     stage('Promote Amar03 to Amar02'){
 
