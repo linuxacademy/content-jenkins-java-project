@@ -122,8 +122,21 @@ pipeline {
 
           post{
             success{
-              emailext(subject:"SUCCESSFUL Amar03 Promoted to Amar02 : Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",to:"srinuamar9@gmail.com")
+              emailext(subject:"SUCCESSFUL Amar03 Promoted to Amar02 : Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+              body: """<p>SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+                <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
+
+              to:"srinuamar9@gmail.com")
             }
+
+            failure{
+              emailext (subject: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+              body: """<p>FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+              <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
+              to:"srinuamar9@gmail.com")
+            }
+
+
           }
 
     }
@@ -136,7 +149,14 @@ pipeline {
 
     always{
 
-      emailext(to:"srinuamar9@gmail.com")
+      emailext(
+
+        subject:"ENTER THE PROJECT ${env.JOB_NAME} BUILD  ${env.BUILD_NUMBER}"
+        body: "FIND THE LOG HERE ${env.BUILD_URL}"
+        to:"srinuamar9@gmail.com"
+
+
+      )
 
     }
 
