@@ -49,7 +49,8 @@ pipeline {
       }
 
       steps{
-         sh "cp dist/rectangle_${env.BUILD_NUMBER}.jar  /var/www/html/rectangles/all/"
+         sh "mkdir -p /var/www/html/rectangles/all/${env.BRANCH_NAME}"
+         sh "cp dist/rectangle_${env.BUILD_NUMBER}.jar  /var/www/html/rectangles/all/${env.BRANCH_NAME}"
       }
 
     }
@@ -62,7 +63,7 @@ pipeline {
             }
 
             steps{
-                sh "wget http://35.230.114.105/rectangles/all/rectangle_${env.BUILD_NUMBER}.jar"
+                sh "wget http://35.230.114.105/rectangles/all/${env.BRANCH_NAME}/rectangle_${env.BUILD_NUMBER}.jar"
                 sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 54 321"
             }
         }
@@ -79,7 +80,7 @@ pipeline {
 
           steps{
 
-              sh "cp /var/www/html/rectangles/all/rectangle_${env.BUILD_NUMBER}.jar /var/www/html/rectangles/green"
+              sh "cp /var/www/html/rectangles/all/${env.BRANCH_NAME}/rectangle_${env.BUILD_NUMBER}.jar /var/www/html/rectangles/green"
 
           }
     }
