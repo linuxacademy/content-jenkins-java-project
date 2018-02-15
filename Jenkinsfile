@@ -97,7 +97,7 @@ pipeline {
             sh "git stash"
             echo "Checking Out Amar03"
             sh "git checkout Amar03"
-            git 'pull'
+            sh "git pull"
             echo "Checking Out Amar02"
             sh "git checkout Amar02"
             echo "Merging  Amar03"
