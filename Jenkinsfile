@@ -17,6 +17,7 @@ pipeline {
 
       agent{
         label 'apache'
+        
       }
 
       steps {
