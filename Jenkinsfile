@@ -8,8 +8,10 @@ pipeline {
       agent{
         label 'apache'
       }
+
       steps {
         sh 'ant -f test.xml -v'
+        //
         junit 'reports/result.xml'
       }
     }
@@ -29,7 +31,7 @@ pipeline {
         success {
 
           archiveArtifacts artifacts: 'dist/*.jar', fingerprint: true
-          
+
         }
       }
 
