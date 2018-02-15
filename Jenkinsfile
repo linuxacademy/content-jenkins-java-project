@@ -93,7 +93,6 @@ pipeline {
     }
 
  //  Added this stage for automatic branch promotions ...
-
     stage('Promote Amar03 to Amar02'){
 
           agent{
@@ -120,6 +119,24 @@ pipeline {
             sh "git tag -a ${env.MAJOR_VERSION}.${env.BUILD_NUMBER}  -m ${env.GIT_COMMIT}"
             sh "git push origin ${env.MAJOR_VERSION}.${env.BUILD_NUMBER}"
           }
+
+          post{
+            success{
+              emailext(subject:"SUCCESSFUL Amar03 Promoted to Amar02 : Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",to:"srinuamar9@gmail.com")
+            }
+          }
+
+    }
+
+
+  }
+
+
+  post{
+
+    always{
+
+      emailext(to:"srinuamar9@gmail.com")
 
     }
 
