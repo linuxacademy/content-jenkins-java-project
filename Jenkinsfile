@@ -92,7 +92,7 @@ pipeline {
           }
     }
 
-    stage{
+    stage('GREETINGS'){
 
           agent any
 
