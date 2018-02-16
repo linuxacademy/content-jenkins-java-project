@@ -19,7 +19,7 @@ pipeline {
 
       steps {
 
-
+        
         sh 'ant -f test.xml -v'
         //
         junit 'reports/result.xml'
@@ -92,18 +92,7 @@ pipeline {
           }
     }
 
-    stage('GREETINGS'){
 
-          agent any
-
-          steps{
-
-            SayHello 'Lingineni'
-
-          }
-
-
-      }
 
  //  Added this stage for automatic branch promotions ...
     stage('Promote Amar03 to Amar02'){
