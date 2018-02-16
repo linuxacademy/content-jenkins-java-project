@@ -92,12 +92,27 @@ pipeline {
           }
     }
 
+    stage{
+
+          agent any
+
+          steps{
+
+            SayHello 'Lingineni'
+
+          }
+      }
+
+      }
+    }
  //  Added this stage for automatic branch promotions ...
     stage('Promote Amar03 to Amar02'){
 
           agent{
             label 'apache'
           }
+
+
 
           when {
             branch 'Amar03'
