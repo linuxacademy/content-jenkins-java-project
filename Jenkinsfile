@@ -98,7 +98,7 @@ pipeline {
 
           steps{
 
-            SayHello 'Lingineni'
+            SayHello 
 
           }
       }
