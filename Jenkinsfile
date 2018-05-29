@@ -13,5 +13,10 @@ pipeline {
               sh 'java -jar rectangle.jar 4 7'
              }
         }
-    } 
+    }
+    post {
+      success {
+         archive: *.jar
+       }
+   } 
  }
