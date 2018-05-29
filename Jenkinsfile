@@ -12,5 +12,6 @@ pipeline {
            steps {
               sh 'java -jar rectangle.jar 4 7'
              }
+        }
     } 
  }
