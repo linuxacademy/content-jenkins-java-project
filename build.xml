@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<project name="Rectangle-Build" default="main" basedir=".">
+    <property name="src.dir" location="src" />
+    <property name="build.dir" location="bin" />
+    <property name="dist.dir" location="dist" />
+    
+    <path id="class.path">
+     <pathelement location=
+
