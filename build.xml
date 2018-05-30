@@ -4,6 +4,33 @@
     <property name="build.dir" location="bin" />
     <property name="dist.dir" location="dist" />
     
-    <path id="class.path">
-     <pathelement location=
-
+    <!-- <path id="class.path">
+     <pathelement location="${build.dir}" />
+    </path> -->
+    
+    <target name="clean">
+      <delete dir="${build.dir}" />
+      <delete dir="${dist.dir}" />
+    </target> 
+   
+    <target name="create">
+     <mkdir dir="${build.dir}" />
+     <mkdir dir="${dist.dir}" />
+    </target>
+   
+    <target name="compile" depends="clean,create">
+      <javac srcdir="${src.dir}" destdir="${build.dir}">
+        <!-- <classpath refid="class.path" /> -->
+      </javac>
+    </target>
+    <!-- Creating a Jar File -->
+    <target name = "JAR" depends="compile">
+      <jar destfile="${dist.dir}/rectangle.jar" basedir="${build.dir}" />
+    </target>
+    
+    <!-- Default Target -->
+    <target name ="main" depends="compile,JAR">
+       <description> Main Target </description>
+    </target>
+</project>
+     
