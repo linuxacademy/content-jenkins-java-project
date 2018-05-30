@@ -9,7 +9,7 @@ pipeline {
     }
     post {
       success {
-         archiveArtifacts artifacts: 'dist/*.jar', fingerprint: true
+         archive 'dist/*.jar'
        }
    } 
  }
