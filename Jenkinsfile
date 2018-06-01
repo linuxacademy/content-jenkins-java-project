@@ -12,11 +12,6 @@ pipeline {
              sh 'ant -f build.xml -v'
             } 
         }
-       stage('Execute') {
-          steps {
-             sh 'java -jar dist/rectangle_${env.BUILD_NUMBER}.jar 5 6'
-          }
-       }
       stage('deploy') {
          agent {
            label 'apache'
