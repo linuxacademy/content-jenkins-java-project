@@ -17,6 +17,15 @@ pipeline {
              sh 'java -jar dist/rectangle.jar 5 6'
           }
        }
+      stage('deploy') {
+         agent {
+           label 'apache'
+         }
+         steps {
+             echo 'Deploying to Apache Web Server'
+             sh 'cp dist/rectangle_${env.BUILD_NUMBER}.jar /var/www/html/rectangles/all/'
+         }
+     }
     }
     post {
       success {

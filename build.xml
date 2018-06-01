@@ -1,5 +1,7 @@
 <?xml version="1.0" ?>
 <project name="Rectangle-Build" default="main" basedir=".">
+    <property environment="env"/>
+ 
     <property name="src.dir" location="src" />
     <property name="build.dir" location="bin" />
     <property name="dist.dir" location="dist" />
@@ -26,7 +28,7 @@
     </target>
     <!-- Creating a Executable Jar File  -->
     <target name = "JAR" depends="compile">
-      <jar destfile="${dist.dir}/rectangle.jar" basedir="${build.dir}" >
+      <jar destfile="${dist.dir}/rectangle_${env.BUILD_NUMBER}.jar" basedir="${build.dir}" >
       <manifest>
         <attribute name="Main-Class" value="Rectangulator"/>
       </manifest>
