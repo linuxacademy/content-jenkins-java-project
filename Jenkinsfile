@@ -14,7 +14,7 @@ pipeline {
         }
        stage('Execute') {
           steps {
-             sh 'java -jar dist/rectangle.jar 5 6'
+             sh 'java -jar dist/rectangle_${env.BUILD_NUMBER}.jar 5 6'
           }
        }
       stage('deploy') {
