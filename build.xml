@@ -4,9 +4,10 @@
     <property name="build.dir" location="bin" />
     <property name="dist.dir" location="dist" />
     
-    <!-- <path id="class.path">
+    <path id="class.path">
      <pathelement location="${build.dir}" />
-    </path> -->
+     <pathelement location="./lib/junit-4.10.jar" />
+    </path>
     
     <target name="clean">
       <delete dir="${build.dir}" />
@@ -20,7 +21,7 @@
    
     <target name="compile" depends="clean,create">
       <javac srcdir="${src.dir}" destdir="${build.dir}">
-        <!-- <classpath refid="class.path" /> -->
+        <classpath refid="class.path" />
       </javac>
     </target>
     <!-- Creating a Executable Jar File  -->
