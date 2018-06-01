@@ -11,7 +11,7 @@ public class RectangleTest {
  
     @Test
     public void testGetPerimeter() {
-    assertEquals("This Step is Failed ",tester.getPerimeter(),30);
+    assertEquals("This Step is Failed ",tester.getPerimeter(),22);
     }
 
 }
