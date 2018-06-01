@@ -28,7 +28,7 @@
     <target name="Unit Test" depends="compile">
         <junit printsummary="on" fork="yes">
             <classpath refid="class.path" />
-            <test name="RectangleTest" todir="${report.dir}" outfile="result">
+            <test name="RectangleTestSuite" todir="${report.dir}" outfile="result">
                 <formatter type="xml" />
             </test>
         </junit>
