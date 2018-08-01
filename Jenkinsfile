@@ -4,7 +4,8 @@ pipeline {
     options {
      buildDiscarder(logRotator(numToKeepStr: '2', artifactNumToKeepStr: '1'))
       }    
-    }
+
+
   stages {
     stage('Unit Tests') {
       steps {
@@ -12,11 +13,12 @@ pipeline {
           junit 'reports/result.xml'
         }
       }
+
     stage('Build') {
       steps {
        sh 'ant -f build.xml -v'
         }
-      }
+       }
      }
   
 
