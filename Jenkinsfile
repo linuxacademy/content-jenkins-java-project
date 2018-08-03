@@ -54,5 +54,15 @@ pipeline {
         echo 'End of stage Deploy'
        }
      } 
+     stage("dummy stage"){
+         agent{
+             label 'CentOS'
+         }
+		steps {
+		    echo 'Dummy stage'
+		}
+
+     }
+
+	}
 	}	
-}
