@@ -54,9 +54,9 @@ pipeline {
         echo 'End of stage Deploy'
        }
      } 
-     stage("dummy stage"){
+     stage("Running on Docker Debian"){
          agent{
-             label 'CentOS'
+             docker 'openjdk:7u181-jre'
          }
 		steps {
 		    echo 'Dummy stage'
