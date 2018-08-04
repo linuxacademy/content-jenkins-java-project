@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 pipeline {
   agent none
   
@@ -74,3 +75,15 @@ pipeline {
 	  }
 	}
 }	
+=======
+pipeline {
+  agent any
+  stages {
+    stage('Build') {
+      steps {
+       sh 'ant -f build.xml -v'
+      }
+    }
+  }
+}
+>>>>>>> bdc45dae5614750d9521ff08d9b407e3e6437a20
