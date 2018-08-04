@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 pipeline {
   agent none
   
@@ -68,22 +67,10 @@ pipeline {
      	agent {
          label 'apache'
      }
-     	
          steps {
              sh "cp /var/www/html/rectangles/all/rectangle_${env.BUILD_NUMBER}.jar /var/www/html/rectangles/green/rectangle_${env.BUILD_NUMBER}.jar"
          }
 	  }
 	}
 }	
-=======
-pipeline {
-  agent any
-  stages {
-    stage('Build') {
-      steps {
-       sh 'ant -f build.xml -v'
-      }
-    }
-  }
-}
->>>>>>> bdc45dae5614750d9521ff08d9b407e3e6437a20
+
