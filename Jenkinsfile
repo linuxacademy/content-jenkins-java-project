@@ -58,7 +58,7 @@ pipeline {
          agent{
              docker{ 
              image 'openjdk:10.0-jre'
-             label 'apache'
+             label 'CentOS'
              
          }
 		steps {
