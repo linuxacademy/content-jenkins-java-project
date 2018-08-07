@@ -56,7 +56,9 @@ pipeline {
      } 
      stage("Running on Docker Debian"){
          agent{
-             docker 'openjdk:10.0-jre'
+             docker{ 
+             image 'openjdk:10.0-jre'
+             label 'apache'
              
          }
 		steps {
