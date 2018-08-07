@@ -68,7 +68,7 @@ pipeline {
          label 'apache'   
      }
      	when {
-     	    branch 'dev'
+     	    branch 'master'
      	}
 
          steps {
