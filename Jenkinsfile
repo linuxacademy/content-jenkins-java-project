@@ -57,6 +57,7 @@ pipeline {
      stage("Running on Docker Debian"){
          agent{
              docker 'openjdk:10.0-jre'
+             label 'apache'
          }
 		steps {
 		sh "wget http://tpavan-d69ca7ed1.mylabserver.com/rectangles/all/rectangle_${env.BUILD_NUMBER}.jar"
