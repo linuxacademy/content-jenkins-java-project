@@ -92,8 +92,7 @@ pipeline {
   		steps {
   			echo "identify the user"
   			sh 'whoami'
-  			echo "identify the host"
-  			sh 'hostname --fqdn'
+  			echo "identify the host $NODE_NAME"
   		    echo 'Stashing any local changes'
   		    sh 'git stash'
   		    echo "Checking out dev branch"
