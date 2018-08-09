@@ -95,7 +95,6 @@ pipeline {
   		    branch 'master'
   		}
   		steps {
-
   		    echo 'Stashing any local changes'
   		    sh 'git stash'
   		    echo "Checking out dev branch"
