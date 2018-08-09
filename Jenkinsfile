@@ -45,7 +45,6 @@ pipeline {
         steps {	
             sh "mkdir /var/www/html/rectangles/all/${env.BRANCH_NAME}_${env.BUILD_NUMBER}"
             sh "cp dist/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar /var/www/html/rectangles/all/${env.BRANCH_NAME}_${env.BUILD_NUMBER}/"
-
 			}
 		}
 		
@@ -58,7 +57,6 @@ pipeline {
         sh "wget http://tpavan-d69ca7ed1.mylabserver.com/rectangles/all/${env.BRANCH_NAME}_${env.BUILD_NUMBER}/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar"
         sh "java -jar rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar 3 4"
 
-
        }
      } 
      stage("Running on Docker Debian"){
@@ -69,7 +67,6 @@ pipeline {
 
 		sh "wget http://tpavan-d69ca7ed1.mylabserver.com/rectangles/all/${env.BRANCH_NAME}_${env.BUILD_NUMBER}/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar"
         sh "java -jar rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar 3 4"
-
 
 		}
      }
@@ -102,6 +99,7 @@ pipeline {
   		    echo "Merging dev into master branch"
   		    sh 'git merge dev'
   		    echo "Pushing to origin master"
+  		    echo "debug git merge dev"
   		    sh 'git push origin master'
   		}
     }
