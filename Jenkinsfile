@@ -90,6 +90,8 @@ pipeline {
   		    branch 'dev'
   		}
   		steps {
+  			echo "identify the user"
+  			sh 'whoami'
   		    echo 'Stashing any local changes'
   		    sh 'git stash'
   		    echo "Checking out dev branch"
@@ -99,7 +101,6 @@ pipeline {
   		    echo "Merging dev into master branch"
   		    sh 'git merge dev'
   		    echo "Pushing to origin master"
-  		    echo "debug git merge dev"
   		    sh 'git push origin master'
   		}
     }
