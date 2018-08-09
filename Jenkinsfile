@@ -93,7 +93,7 @@ pipeline {
   			echo "identify the user"
   			sh 'whoami'
   			echo "identify the host"
-  			sh 'hostname'
+  			sh 'hostname --fqdn'
   		    echo 'Stashing any local changes'
   		    sh 'git stash'
   		    echo "Checking out dev branch"
