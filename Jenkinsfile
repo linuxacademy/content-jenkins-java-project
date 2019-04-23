@@ -31,7 +31,7 @@ pipeline {
         sh "cp dist/rectangle_${env.BUILD_NUMBER}.jar /var/www/html/rectangles/all"
       }
     }
-    stage ('Ruuning on CentOs'){
+    stage ('Running on CentOs'){
       agent {
       label 'CentOs'
       }
@@ -49,5 +49,10 @@ pipeline {
     sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 3 4"
     }
   }
+    stage('Promote to green'){
+      steps {
+        sh "cp /var/www/html/rectangles/all/rectangle_${env.BUILD_NUMBER}.jar /var/www/html/rectangles/green"
+      }
+    }
   }
  }
