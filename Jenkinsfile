@@ -35,7 +35,7 @@ pipeline {
       agent {
       label 'CentOs'
       }
-      steps{
+      steps {
       sh "wget http://cprakas011d.mylabserver.com/rectangles/all/${env.BRANCH_NAME}/rectangle_${env.BUILD_NUMBER}.jar"
       sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 3 4"
       }
