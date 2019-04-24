@@ -80,6 +80,7 @@ pipeline {
         echo 'Merging developement to master'
         sh 'git merge developement'
         echo "Pusing to origin master"
+        sh "git remote set-url origin git@github.com:temtestuser/content-jenkins-java-project.git"
         sh 'git push origin master'
         echo "Y"
         echo "K"
