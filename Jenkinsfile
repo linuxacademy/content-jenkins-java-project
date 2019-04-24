@@ -82,7 +82,7 @@ pipeline {
         echo "Pusing to origin master"
         sh "git remote set-url origin git@github.com:temtestuser/content-jenkins-java-project.git"
         sh 'git push origin master'
-        echo "Y"
+        echo "T"
         echo "K"
       }
     }
