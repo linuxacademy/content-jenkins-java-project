@@ -80,6 +80,7 @@ pipeline {
         echo "Pusing to origin master"
         sh 'git push origin master'
         echo "Y"
+        echo "X"
       }
     }
   }
