@@ -84,6 +84,7 @@ pipeline {
         sh 'git push origin master'
         echo "T"
         echo "X"
+        echo "Hi"
       }
     }
   }
